@@ -23,3 +23,5 @@ if __name__ == "__main__":
         rwlock.write(data)
         print("idx",idx)
         time.sleep(0.001)
+
+# python3 test.py dp2
