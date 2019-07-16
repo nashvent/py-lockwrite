@@ -4,11 +4,12 @@ import sys
 import logging
 import json
 import random
-field = str(sys.argv[1]) 
+#field = str(sys.argv[1]) 
 
 rwlock=RWLock("data.json")
 excTime=0.0
 loops=10000
+fields=["dp1","dp2","dp3"]
 if __name__ == "__main__":
 
     for idx in range(loops):
@@ -17,8 +18,10 @@ if __name__ == "__main__":
         data=rwlock.read(True)
         ##Json 
         jdata=json.loads(data)
-        cnum=jdata["info"][0][field]
-        jdata["info"][0][field]=int(cnum)+1
+        
+        for idx2 in range(len(fields)):
+            cnum=jdata["info"][0][fields[idx2]]
+            jdata["info"][0][fields[idx2]]=int(cnum)+1+idx2
         data=json.dumps(jdata, ensure_ascii=False)
         #EndJson
         rwlock.write(data)
