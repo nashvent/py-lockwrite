@@ -1,10 +1,6 @@
 import json
 import logging
-import time
 from filelock import Timeout, FileLock
-import sys
-
-
 
 class RWLock:
     def __init__(self, file):
