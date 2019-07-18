@@ -4,14 +4,14 @@ import sys
 import logging
 import json
 import random
-#field = str(sys.argv[1]) 
 
 rwlock=RWLock("data.json")
 excTime=0.0
-loops=10000
+loops=int(sys.argv[1])
 fields=["dp1","dp2","dp3"]
-if __name__ == "__main__":
 
+def main():
+    excTime=0
     for idx in range(loops):
         start = time.time()
         
@@ -28,7 +28,11 @@ if __name__ == "__main__":
         end = time.time()
         excTime+=(end - start)
         
-        print("idx",idx)
         time.sleep(0.001)
-    print("Tiempo Promedio",excTime/loops)
-# python3 test.py dp2
+    return excTime/loops;
+    
+
+if __name__ == "__main__":
+    timeExc=main()
+    print(timeExc)
+    
