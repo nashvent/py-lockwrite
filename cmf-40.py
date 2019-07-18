@@ -30,7 +30,6 @@ def main():
             rwlock.write(data)
             end = time.time()
             excTime+=(end - start)
-        time.sleep(0.001)
     return excTime/(loops*2);
     
 if __name__ == "__main__":
