@@ -27,6 +27,7 @@ Para probar el funcionamiento correr el archivo de test.py
 
 
 # Issue CMF-40
+El script devuelve el tiempo promedio
 ```
-./runCMF-39.sh $loops
+./runCMF-40.sh $loops 
 ```
